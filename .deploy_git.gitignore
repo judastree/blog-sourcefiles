@@ -1,0 +1,8 @@
+
+# Mac desktop service store files
+.DS_Store
+.idea
+
+##node modules
+**/node_modules/
+
