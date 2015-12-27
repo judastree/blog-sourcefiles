@@ -189,6 +189,75 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/15/前端自动化测试探索/" itemprop="url">
+                前端自动化测试探索
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-15T11:13:10+08:00" content="2015-07-15">
+            2015-07-15
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/15/前端自动化测试探索/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/15/前端自动化测试探索/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>先挖个坑，以后慢慢填。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/15/Chrome调试技巧/" itemprop="url">
                 Chrome 调试技巧
               </a>
@@ -1147,126 +1216,6 @@ ERROR 类型调试信息，错误信息
 </blockquote>
 <h3 id="Support_StackEdit">Support StackEdit</h3><p><a href="https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&amp;summary=true" target="_blank" rel="external"><img src="https://cdn.monetizejs.com/resources/button-32.png" alt=""></a></p>
 <p>  [^stackedit]: <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a> is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/06/React学习笔记/" itemprop="url">
-                React 学习 笔记 
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-06T17:30:08+08:00" content="2015-07-06">
-            2015-07-06
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/06/React学习笔记/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/06/React学习笔记/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>其实早就有听闻React很火了，但脑子里一直没有概念，于是花了一个小时去找了几篇相关介绍。</p>
-<p>其中知乎上的一篇翻译的文章<a href="http://zhuanlan.zhihu.com/FrontendMagazine/19896745" target="_blank" rel="external">ReactJS 傻瓜教程</a></p>
-<p>然后就记住了两点。</p>
-<pre><code><span class="bullet">1. </span>React是组件化的，而且是仅仅View层面的，还需要配合其他MVC的框架。
-<span class="bullet">2. </span>React有自己的渲染方式，一种类似XML的，将Html和Javascript结合的叫JSX的东西。
-</code></pre><p>虽然这个时候还是不清楚什么是JSX，也对组件化的概念很模糊。</p>
-<p>于是就去React官网找了快速入门来看。有中文版当然还是看<a href="http://reactjs.cn/react/docs/getting-started.html" target="_blank" rel="external">中文版</a>。</p>
-<p>仅是看quick start这一篇，只记住了一点。</p>
-<pre><code>1<span class="class">.html</span>分离，在单独的<span class="tag">js</span>文件中通过<span class="tag">React</span><span class="class">.render</span>来渲染<span class="tag">html</span>
-</code></pre><p>接着继续看下一篇<a href="http://reactjs.cn/react/docs/tutorial.html" target="_blank" rel="external">教程</a>。<br>这个看起来就相当于更完整的一个例子了，实现评论+展示评论列表。</p>
-<p>教程里一步一步讲的很详细。到这里就稍微清晰一些之前的两个概念。</p>
-<pre><code>1.组件化
-2<span class="class">.JSX</span>
-</code></pre><p>不得不说，中文理解起来就是方便快捷。如果是英文，虽然能看懂单词但理解还是会有偏差。【英语不好的借口</p>
-<p>先理解下组件化。</p>
-<p>CommentBox组件中包括CommentList组件和CommentForm组件。而CommentList组件又循环渲染Comment组件。<br>每个组件都是React Create出来的一个element,它们包含但不仅限于html。</p>
-<pre><code>var CommentBox = React.createClass({
-  render: function() {
-    return (
-      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"commentBox"</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>Comments<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">CommentList</span> <span class="attribute">data</span>=<span class="value">{this.props.data}</span> /&gt;</span>
-        <span class="tag">&lt;<span class="title">CommentForm</span> /&gt;</span>
-      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-    );
-  }
-});
-</code></pre><p>数据的传递在自定义标签的属性中，所以这里又出现了一个新的名词props。但数据处理和渲染还是在自定义的组件中。</p>
-<pre><code><span class="keyword">var</span> CommentList = React.createClass({
-  render: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
-    <span class="keyword">var</span> commentNodes = <span class="keyword">this</span>.props.data.map(<span class="function"><span class="keyword">function</span> <span class="params">(comment)</span> </span>{
-      <span class="keyword">return</span> (
-        &lt;Comment author={comment.author}&gt;
-          {comment.text}
-        &lt;/Comment&gt;
-      );
-    });
-    <span class="keyword">return</span> (
-      &lt;div className=<span class="string">"commentList"</span>&gt;
-        {commentNodes}
-      &lt;/div&gt;
-    );
-  }
-}); 
-</code></pre><p>然后什么是JSX？</p>
-<p>我们看到在进行Html渲染的时候，出现了很多自定义html标签，或者说是类xml的标签。<br>React里有一个简单的预编译器，用于将JSX这种语法糖转换成纯的JavaScript代码。作为语法糖，确实JSX 语句比纯 JavaScript 更加容易使用</p>
-<blockquote>
-<blockquote>
-<p>&gt;<br>   这个 div 标签不是真实的DOM节点；他们是 React div 组件的实例。</p>
-</blockquote>
-</blockquote>
-<p>这句话我不是很理解。明明在chrome运行的时候，审查元素能看到div，为什么说不是真实的DOM节点呢？</p>
 </span>
         
       

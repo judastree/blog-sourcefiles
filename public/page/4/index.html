@@ -189,6 +189,115 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/07/LeetCode-Remove-Nth-from-end/" itemprop="url">
+                LeetCode:Remove Nth Node from End of List
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-07T09:07:42+08:00" content="2015-08-07">
+            2015-08-07
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/08/07/LeetCode-Remove-Nth-from-end/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/07/LeetCode-Remove-Nth-from-end/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth Node from End of List</a></p>
+<p>把倒数第N个元素从链表中删除。</p>
+<p>比如链表1-&gt;2-&gt;3-&gt;4-&gt;5,  把倒数第二个删除（n=2），返回1-&gt;2-&gt;3-&gt;5</p>
+<h2 id="思路">思路</h2><p>首先是遍历整个链表，拿到链表的长度，然后根据这个长度值length和指定的n值再遍历一次链表，找到要删除节点的父节点。</p>
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
+ * Definition for singly-linked list.
+ */</span>
+  function ListNode(val) {
+      <span class="keyword">this</span>.val = val;
+      <span class="keyword">this</span>.<span class="keyword">next</span> = <span class="keyword">null</span>;
+  }
+
+<span class="comment">/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */</span>
+var removeNthFromEnd = function(head, n) {
+    var dumy = <span class="keyword">new</span> ListNode(<span class="number">0</span>), p=head,length=<span class="number">0</span>;
+    dumy.<span class="keyword">next</span> =head;
+    <span class="comment">//获取链表长度</span>
+    <span class="keyword">while</span>(p){
+        length++;
+        p = p.<span class="keyword">next</span>;
+    }
+    p = dumy;
+    <span class="comment">//找到要删除元素的父元素</span>
+    <span class="keyword">while</span>(length&gt;n){
+        p = p.<span class="keyword">next</span>;
+        length--;
+    }
+    <span class="comment">//删除元素</span>
+    <span class="keyword">if</span>(p.<span class="keyword">next</span>){
+        p.<span class="keyword">next</span> = p.<span class="keyword">next</span>.<span class="keyword">next</span>;
+    }<span class="keyword">else</span>{
+        p = <span class="keyword">null</span>;
+    }
+    <span class="keyword">return</span> dumy.<span class="keyword">next</span>;
+};
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/removenthfromend.png" alt="removenthfromend"></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/07/LeetCode-Merge-Sorted-Array/" itemprop="url">
                 LeetCode: Merge Sorted Array
               </a>
@@ -976,159 +1085,6 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
     <span class="keyword">return</span> <span class="keyword">cs</span>.<span class="keyword">toString</span>().<span class="keyword">replace</span>(/\,/<span class="keyword">g</span>,<span class="string">""</span>);
 };
 </code></pre><p>   <img src="/images/excelcolumntotitle.png" alt="excelcolumntotile">    </p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/29/LeetCode-Merge-Two-Sorted-Lists/" itemprop="url">
-                LeetCode:Merge Two Sorted Lists
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-29T10:31:25+08:00" content="2015-07-29">
-            2015-07-29
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/29/LeetCode-Merge-Two-Sorted-Lists/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/29/LeetCode-Merge-Two-Sorted-Lists/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="题目">题目</h2><p>  <a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank" rel="external">Merge Two Sorted Lists</a></p>
-<p>   有两个排序好的链表l1和l2，要求是合并为一个列表，并保持列表有序。</p>
-<h2 id="思路">思路</h2><p>   我的想法是先遍历两个链表找到较短的一个，然后把短链表上节点逐个插入到长链表中。</p>
-<p>   然后在网上看别人的代码，其实不用先找到短链。拿一个链表做基准，将另外一个插入就来，只遍历一次就好了。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */</span>
-<span class="comment">/**
- * @param {ListNode} l1
- * @param {ListNode} l2
- * @return {ListNode}
- */</span>
-var mergeTwoLists = function(l1, l2) {
-    <span class="comment">//定义指针</span>
-    var sPointer = l1,lPointer = l2;
-
-    <span class="comment">//一些特殊情况的处理</span>
-    <span class="keyword">if</span>(sPointer&amp;&amp;sPointer.val&amp;&amp;lPointer&amp;&amp;lPointer.val===<span class="keyword">null</span>){
-        <span class="keyword">return</span> sPointer;
-    }
-    <span class="keyword">if</span>(sPointer&amp;&amp;sPointer.val===<span class="keyword">null</span>&amp;&amp;lPointer&amp;&amp;lPointer.val){
-        <span class="keyword">return</span> lPointer;
-    }
-    <span class="keyword">if</span>(sPointer&amp;&amp;!lPointer){
-        <span class="keyword">return</span> sPointer;
-    }
-    <span class="keyword">if</span>(!sPointer&amp;&amp;lPointer){
-        <span class="keyword">return</span> lPointer;
-    }
-    <span class="keyword">if</span>(!sPointer&amp;&amp;!lPointer){
-        <span class="keyword">return</span> <span class="keyword">null</span>;
-    }
-
-     <span class="comment">//找到较短链表,逐个插入到长链表中</span>
-    <span class="keyword">while</span>(sPointer){
-        <span class="keyword">if</span>(!lPointer){ <span class="comment">//lpointer为null，说明l1&gt;l2</span>
-            sPointer = l2;
-            lPointer = l1;
-            <span class="keyword">break</span>;
-        }
-        sPointer = sPointer.<span class="keyword">next</span>;
-        lPointer = lPointer.<span class="keyword">next</span>;
-    }
-    <span class="keyword">if</span>(!sPointer){
-        <span class="comment">//l1&lt;=l2</span>
-        sPointer = l1;
-        lPointer = l2;
-    }
-
-    <span class="comment">//为了保存插入节点previous的位置，创建一个dummy的节点</span>
-    var dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);
-    dummy.<span class="keyword">next</span> = lPointer;
-
-    var prePointer = dummy;
-
-    var insertnode = sPointer;
-    <span class="keyword">while</span>(sPointer){
-        <span class="keyword">if</span>(insertnode.val&lt;=lPointer.val){
-
-            prePointer.<span class="keyword">next</span> = insertnode;
-            sPointer = sPointer.<span class="keyword">next</span>;
-            insertnode.<span class="keyword">next</span> = lPointer;
-            <span class="comment">//短链的指针后移一位，长链不动</span>
-            insertnode = sPointer;
-            prePointer = prePointer.<span class="keyword">next</span>;
-        }<span class="keyword">else</span>{
-            <span class="keyword">if</span>(!lPointer.<span class="keyword">next</span>){
-                lPointer.<span class="keyword">next</span> = sPointer;
-                <span class="keyword">break</span>;
-            }
-            <span class="comment">//长链后移一位，短链不动</span>
-            prePointer =lPointer;
-            lPointer = lPointer.<span class="keyword">next</span>;
-        }
-
-
-    }
-    <span class="keyword">return</span> dummy.<span class="keyword">next</span>;
-};
-</code></pre><p>  <img src="/images/merge2sortedlists.png" alt="merge2sortedlists"></p>
 </span>
         
       

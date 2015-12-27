@@ -189,6 +189,164 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/" itemprop="url">
+                LeetCode:Intersection of Two Linked Lists
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-24T10:47:40+08:00" content="2015-07-24">
+            2015-07-24
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank" rel="external">查找两个链表相同的尾链</a></p>
+<pre><code>A:          <span class="literal">a1</span> → <span class="literal">a2</span>
+                   ↘
+                     <span class="literal">c1</span> → <span class="literal">c2</span> → <span class="literal">c3</span>
+                   ↗            
+<span class="keyword">B: </span>    <span class="keyword">b1 </span>→ <span class="keyword">b2 </span>→ <span class="keyword">b3</span>
+</code></pre><p> <em>如果两个链表没有相同尾链，返回null。
+ </em>两个链表在输出时应保持原来的结构。<br> <em>链表结构中没有循环。
+ </em>时间复杂度要求O(n),空间复杂度要求O(1)</p>
+<h2 id="思路">思路</h2><p> 先取A，B链的长度，找出哪个是短链，哪个是长链。</p>
+<p> 然后找到长链尾部和短链长度相同的位置，开始比较它和短链是否相等。</p>
+<p> 如果当前节点不相等，则两者后移一位继续比较，直到找到第一个相等的节点，记录之。</p>
+<p> 如果当前节点不相等，但前一个节点相等，说明没有相同的尾链，返回null。</p>
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */</span>
+var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
+
+    <span class="keyword">if</span>(headA&amp;&amp;headB){
+        var <span class="variable">node=</span>headA,<span class="variable">aLength=</span><span class="number">1</span>,<span class="variable">bLength=</span><span class="number">1</span>;
+        while(node.next){
+            aLength++;
+            <span class="variable">node =</span> node.next;
+        }
+        <span class="variable">node=</span> headB;
+        while(node.next){
+            bLength++;
+            <span class="variable">node=</span>node.next;
+        }
+        var pointer1 ,pointer2;
+        //将ab链截取到尾部位数相同
+        <span class="keyword">if</span>(aLength &gt; bLength){
+            <span class="variable">pointer1 =</span> headB;
+            <span class="variable">pointer2 =</span> headA;
+            for(var <span class="variable">i =</span> bLength;i&lt;aLength;i++){
+                <span class="variable">pointer2 =</span> pointer2.next;
+            }
+        }<span class="keyword">else</span> <span class="keyword">if</span>(aLength&lt;bLength){
+            <span class="variable">pointer1 =</span> headA;
+            <span class="variable">pointer2 =</span> headB;
+            for(<span class="variable">i =</span> aLength;i&lt;bLength;i++){
+                <span class="variable">pointer2 =</span> pointer2.next;
+            }
+        }<span class="keyword">else</span>{
+            <span class="variable">pointer1 =</span> headA;
+            <span class="variable">pointer2 =</span> headB;
+        }
+
+        <span class="variable">node =</span> <span class="constant">null</span>;
+        //保留上次比较结果
+        var <span class="variable">sameFlag =</span> <span class="constant">false</span>;
+        while(pointer1){
+
+            <span class="keyword">if</span>(pointer1.<span class="variable">val=</span>==pointer2.val){
+                //当前相等，继续比较。
+                // 如果上次比较不相等，则赋值node，说明是第一个相等的节点
+                <span class="keyword">if</span>(!sameFlag){
+                    <span class="variable">node =</span> pointer1;
+                }
+                <span class="variable">sameFlag=</span><span class="constant">true</span>;
+                <span class="variable">pointer1 =</span> pointer1.next;
+                <span class="variable">pointer2 =</span> pointer2.next;
+                continue;
+
+            }
+            <span class="keyword">if</span>(pointer1.val!==pointer2.val){
+                //当前不相等，判断上次比较是否相等。
+                <span class="keyword">if</span>(sameFlag){
+                    //上次比较相等，则直接返回<span class="constant">null</span>，说明没有相同的尾链
+                    return <span class="constant">null</span>;
+                }<span class="keyword">else</span>{
+                    //上次比较不相等，则继续比较
+                    <span class="variable">pointer1 =</span> pointer1.next;
+                    <span class="variable">pointer2 =</span> pointer2.next;
+                    <span class="variable">sameFlag=</span><span class="constant">false</span>;
+                    continue;
+                }
+
+            }
+        }
+        return node;
+
+    }<span class="keyword">else</span>{
+        return <span class="constant">null</span>;
+    }
+};
+</code></pre><p> <img src="/images/intersection.png" alt="intersection"></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/23/页面性能分析工具/" itemprop="url">
                 页面性能分析工具
               </a>
@@ -1059,127 +1217,6 @@ bst.postOrder(bst.root, <span class="function"><span class="keyword">function</s
 <p>chromium是谷歌的开源项目，有很多开发者共同的去改进，谷歌收集改进后会发布安装包，也就是chromium，然后会将chromium的东西更新到chrome中，chrome不是开源项目，而在chrome内的更新也有一个过程，先更新到chrome的金丝雀版（未验证bug），接着到dev版（大问题已经验证），接着beta（小问题已经验证），都没问题了，再更新到稳定版。</p>
 <p>Chrome浏览器各版本的特点：<br>1、Chromium<br>Chromium是Google为发展Chrome浏览器而启动的开源项目，Chromium相当于Chrome的工程版或称实验版（尽管Chrome自身也有β版阶段），新功能会率先在Chromium上实现，待验证后才会应用在Chrome上，故Chrome的功能会相对落后但较稳定（实际上稳定性也差不多）；Chromium的更新速度很快，每隔数小时即有新的开发版本。<br>2、Chrome dev<br>基于最新的Chromium Build，经常每周就更新推出新功能；与Beta版十分相似，但稳定性较差，不适合公共使用。<br>3、Chrome beta<br>基于Chrome dev；按月更新；崩溃等重大故障较少发生，功能比dev更加完善。<br>4、Chrome stable</p>
 <p>然后…然后我瞬间找到了我的QQ浏览器为什么一直崩溃he的原因了。</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/19/LeetCode:Path Sum/" itemprop="url">
-                LeetCode:Path-Sum
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-19T22:37:32+08:00" content="2015-07-19">
-            2015-07-19
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/19/LeetCode:Path Sum/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/19/LeetCode:Path Sum/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="题目来源">题目来源</h2><p> <a href="https://leetcode.com/problems/path-sum/" target="_blank" rel="external">指定和值的二叉树路径查找</a></p>
-<p> 现在有一个二叉树，找出这个二叉树中是否有存在这样一条根到叶子的路径能使路径节点上的值加起来等于给定的值。<br> <em>比如</em>下面这个二叉树，给定的值是22，5-&gt;4-&gt;11-&gt;2 这条路径是满足条件的。</p>
-<pre><code>      <span class="number">5</span>
-     / <span class="string">\</span>
-    <span class="number">4</span>   <span class="number">8</span>
-   /   / <span class="string">\</span>
-  <span class="number">11</span>  <span class="number">13</span>  <span class="number">4</span>
- /  <span class="string">\</span>      <span class="string">\</span>
-<span class="number">7</span>    <span class="number">2</span>      <span class="number">1</span>
-</code></pre><h2 id="思路">思路</h2><p> 这就是一个二叉树遍历，从根节点往下，每找到一个节点将节点的value和当前路径相加，判断是否和sum相等。</p>
-<ul>
-<li>如果相等，并且是叶子节点，则返回true，找到</li>
-<li>如果不相等，相等但不是叶子节点，则继续查找，直到所有的节点都遍历过。</li>
-</ul>
-<h2 id="实现">实现</h2><p> JavaScript:</p>
-<pre><code><span class="keyword">var</span> checkNext =<span class="function"><span class="keyword">function</span><span class="params">(root, sum, currentSum,flag)</span></span>{
-    <span class="keyword">if</span> (root) {
-
-        <span class="keyword">if</span> (root.val + currentSum === sum) {
-            <span class="keyword">if</span> (root.left === <span class="literal">null</span> &amp;&amp; root.right === <span class="literal">null</span>) {
-                <span class="keyword">return</span> <span class="literal">true</span>;
-            }
-        }
-        <span class="keyword">if</span>(root.left===<span class="literal">null</span>&amp;&amp;root.right===<span class="literal">null</span>){
-            <span class="keyword">return</span> <span class="literal">false</span>;
-        }
-
-        <span class="keyword">if</span> (root.left !== <span class="literal">null</span>) {
-            flag = checkNext(root.left, sum, root.val + currentSum,flag);
-        }
-        <span class="keyword">if</span>(flag){
-            <span class="keyword">return</span> <span class="literal">true</span>;
-        }
-        <span class="keyword">if</span> (root.right !== <span class="literal">null</span>) {
-            flag = checkNext(root.right, sum, root.val + currentSum,flag);
-        }
-        <span class="keyword">return</span> flag;
-
-
-    } <span class="keyword">else</span> {
-        <span class="keyword">return</span> <span class="literal">false</span>;
-    }
-}
-<span class="keyword">var</span> hasPathSum = <span class="function"><span class="keyword">function</span> <span class="params">(root, sum)</span> </span>{
-
-    <span class="keyword">if</span>(checkNext(root, sum, <span class="number">0</span>,<span class="literal">false</span>)){
-        <span class="keyword">return</span> <span class="literal">true</span>
-    }<span class="keyword">else</span>{
-        <span class="keyword">return</span> <span class="literal">false</span>
-    }
-  };
-</code></pre><p>PS:这是我在leetcode上做的第一个题，最初没有搞明白玩法，一直在自己实现二叉树，后面才发现原来二叉树已经写好，只要给遍历方法就好了。</p>
-<p><img src="/images/pathsumruntime.png" alt="Runtime"></p>
 </span>
         
       

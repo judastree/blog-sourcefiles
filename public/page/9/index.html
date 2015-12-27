@@ -189,6 +189,126 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/06/React学习笔记/" itemprop="url">
+                React 学习 笔记 
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-06T17:30:08+08:00" content="2015-07-06">
+            2015-07-06
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/06/React学习笔记/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/06/React学习笔记/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>其实早就有听闻React很火了，但脑子里一直没有概念，于是花了一个小时去找了几篇相关介绍。</p>
+<p>其中知乎上的一篇翻译的文章<a href="http://zhuanlan.zhihu.com/FrontendMagazine/19896745" target="_blank" rel="external">ReactJS 傻瓜教程</a></p>
+<p>然后就记住了两点。</p>
+<pre><code><span class="bullet">1. </span>React是组件化的，而且是仅仅View层面的，还需要配合其他MVC的框架。
+<span class="bullet">2. </span>React有自己的渲染方式，一种类似XML的，将Html和Javascript结合的叫JSX的东西。
+</code></pre><p>虽然这个时候还是不清楚什么是JSX，也对组件化的概念很模糊。</p>
+<p>于是就去React官网找了快速入门来看。有中文版当然还是看<a href="http://reactjs.cn/react/docs/getting-started.html" target="_blank" rel="external">中文版</a>。</p>
+<p>仅是看quick start这一篇，只记住了一点。</p>
+<pre><code>1<span class="class">.html</span>分离，在单独的<span class="tag">js</span>文件中通过<span class="tag">React</span><span class="class">.render</span>来渲染<span class="tag">html</span>
+</code></pre><p>接着继续看下一篇<a href="http://reactjs.cn/react/docs/tutorial.html" target="_blank" rel="external">教程</a>。<br>这个看起来就相当于更完整的一个例子了，实现评论+展示评论列表。</p>
+<p>教程里一步一步讲的很详细。到这里就稍微清晰一些之前的两个概念。</p>
+<pre><code>1.组件化
+2<span class="class">.JSX</span>
+</code></pre><p>不得不说，中文理解起来就是方便快捷。如果是英文，虽然能看懂单词但理解还是会有偏差。【英语不好的借口</p>
+<p>先理解下组件化。</p>
+<p>CommentBox组件中包括CommentList组件和CommentForm组件。而CommentList组件又循环渲染Comment组件。<br>每个组件都是React Create出来的一个element,它们包含但不仅限于html。</p>
+<pre><code>var CommentBox = React.createClass({
+  render: function() {
+    return (
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">"commentBox"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h1</span>&gt;</span>Comments<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">CommentList</span> <span class="attribute">data</span>=<span class="value">{this.props.data}</span> /&gt;</span>
+        <span class="tag">&lt;<span class="title">CommentForm</span> /&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    );
+  }
+});
+</code></pre><p>数据的传递在自定义标签的属性中，所以这里又出现了一个新的名词props。但数据处理和渲染还是在自定义的组件中。</p>
+<pre><code><span class="keyword">var</span> CommentList = React.createClass({
+  render: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+    <span class="keyword">var</span> commentNodes = <span class="keyword">this</span>.props.data.map(<span class="function"><span class="keyword">function</span> <span class="params">(comment)</span> </span>{
+      <span class="keyword">return</span> (
+        &lt;Comment author={comment.author}&gt;
+          {comment.text}
+        &lt;/Comment&gt;
+      );
+    });
+    <span class="keyword">return</span> (
+      &lt;div className=<span class="string">"commentList"</span>&gt;
+        {commentNodes}
+      &lt;/div&gt;
+    );
+  }
+}); 
+</code></pre><p>然后什么是JSX？</p>
+<p>我们看到在进行Html渲染的时候，出现了很多自定义html标签，或者说是类xml的标签。<br>React里有一个简单的预编译器，用于将JSX这种语法糖转换成纯的JavaScript代码。作为语法糖，确实JSX 语句比纯 JavaScript 更加容易使用</p>
+<blockquote>
+<blockquote>
+<p>&gt;<br>   这个 div 标签不是真实的DOM节点；他们是 React div 组件的实例。</p>
+</blockquote>
+</blockquote>
+<p>这句话我不是很理解。明明在chrome运行的时候，审查元素能看到div，为什么说不是真实的DOM节点呢？</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/06/Mac版Webstorm的一些快捷键/" itemprop="url">
                 Mac版Webstorm的一些快捷键 
               </a>
@@ -779,83 +899,6 @@ x 系统默认颜色
 <h2 id="具体步骤">具体步骤</h2><p>1.<br>在应用程序中找到Android Studio.app </p>
 <p>2.<br>右键显示包内容，在目录下找到 info.plist 并用任意文本编辑器打开</p>
 <p>3.<br>找到 JVMVersion 并将 <string>1.6*</string>中的版本号改为你当前的JDK的版本号。 </p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/03/29/hello-world/" itemprop="url">
-                Hello World !
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-03-29T21:09:05+08:00" content="2015-03-29">
-            2015-03-29
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/03/29/hello-world/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/29/hello-world/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 </span>
         
       

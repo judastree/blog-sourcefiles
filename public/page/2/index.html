@@ -189,8 +189,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/10/09/Debug-Grunt-in-Webstorm/" itemprop="url">
-                未命名
+              <a class="post-title-link" href="/2015/10/12/LeetCode-Populating-Next-Right-Pointers-in-Each-Node/" itemprop="url">
+                LeetCode Populating Next Right Pointers in Each Node
               </a>
             
           
@@ -200,8 +200,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-09T11:14:46+08:00" content="2015-10-09">
-            2015-10-09
+          <time itemprop="dateCreated" datetime="2015-10-12T15:22:17+08:00" content="2015-10-12">
+            2015-10-12
           </time>
         </span>
 
@@ -211,8 +211,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/10/09/Debug-Grunt-in-Webstorm/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/09/Debug-Grunt-in-Webstorm/" itemprop="commentsCount"></span>
+              <a href="/2015/10/12/LeetCode-Populating-Next-Right-Pointers-in-Each-Node/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/12/LeetCode-Populating-Next-Right-Pointers-in-Each-Node/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -227,13 +227,173 @@
 
       
         
-          <span itemprop="articleBody"><p>title: “Debug Grunt in Webstorm “<br>date: 2015-07-30 15:04:12</p>
-<h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run  -&gt;  Edit Configuration</p>
-<p>  2 Press Add button (+)</p>
-<p>  3 Type the configurations</p>
-<p>  <img src="/images/gruntdebuginwebstorm.png" alt="gruntdebuginwebstorm"></p>
-<p>  4 Set breakpoint where you want </p>
-<p>  5 Press Shift+Ctrl+D to debug</p>
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/populating-next-right-pointers-in-each-node/" target="_blank" rel="external">Populating Next Right Pointers in Each Node</a></p>
+<p>给一个平衡二叉树的每个节点加上next属性,next 指向起相邻的节点，如果没有则指向null;</p>
+<p>Given the following perfect binary tree,</p>
+<pre><code>     <span class="number">1</span>
+   /  <span class="string">\</span>
+  <span class="number">2</span>    <span class="number">3</span>
+ / <span class="string">\</span>  / <span class="string">\</span>
+<span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>
+</code></pre><p>After calling your function, the tree should look like:</p>
+<pre><code>     <span class="number">1</span> <span class="subst">-&gt; </span><span class="built_in">NULL</span>
+   <span class="subst">/</span>  <span class="subst">\</span>
+  <span class="number">2</span> <span class="subst">-&gt; </span><span class="number">3</span> <span class="subst">-&gt; </span><span class="built_in">NULL</span>
+ <span class="subst">/</span> <span class="subst">\</span>  <span class="subst">/</span> <span class="subst">\</span>
+<span class="number">4</span><span class="subst">-&gt;</span><span class="number">5</span><span class="subst">-&gt;</span><span class="number">6</span><span class="subst">-&gt;</span><span class="number">7</span> <span class="subst">-&gt; </span><span class="built_in">NULL</span>
+</code></pre><h2 id="思路">思路</h2><p>   1.对于一个父节点来说，它左孩子的next指向它的右孩子，它的右孩子的next指向它自己next节点的左孩子。<br>   2.遍历整个二叉树，对每个父节点进行1操作。</p>
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code>/**
+ * Definition <span class="keyword">for</span> binary tree <span class="keyword">with</span> <span class="keyword">next</span> pointer.
+ * <span class="keyword">function</span> TreeLinkNode(val) {
+ *     this.val = val;
+ *     this.<span class="built_in">left</span> = this.<span class="built_in">right</span> = this.<span class="keyword">next</span> = <span class="literal">null</span>;
+ * }
+ */
+
+/**
+ * @param {TreeLinkNode} root
+ * @return {void} <span class="keyword">Do</span> <span class="keyword">not</span> return anything, modify tree <span class="keyword">in</span>-place instead.
+ */
+var connect = <span class="keyword">function</span>(root) {
+    <span class="keyword">if</span>(root===<span class="literal">null</span>) return;
+    root.<span class="keyword">next</span> =<span class="literal">null</span>;
+
+
+    <span class="keyword">function</span> traversal(node){
+        <span class="keyword">if</span>(node){
+            <span class="keyword">if</span>(node.<span class="built_in">left</span>){
+                connectLeftChild(node,node.<span class="built_in">left</span>);
+                traversal(node.<span class="built_in">left</span>);
+            }
+            <span class="keyword">if</span>(node.<span class="built_in">right</span>){
+                connectRightChild(node,node.<span class="built_in">right</span>);
+                traversal(node.<span class="built_in">right</span>);
+            }
+        }
+
+
+    }
+    <span class="keyword">function</span> connectLeftChild(parent,node){
+
+        <span class="keyword">if</span>(node){
+             node.<span class="keyword">next</span> = parent.<span class="built_in">right</span>;
+        }
+    } 
+    <span class="keyword">function</span> connectRightChild(parent,node){
+        <span class="keyword">if</span>(node){
+            <span class="keyword">if</span>(parent.<span class="keyword">next</span>){
+                node.<span class="keyword">next</span> = parent.<span class="keyword">next</span>.<span class="built_in">left</span>;
+            }<span class="keyword">else</span>{
+                node.<span class="keyword">next</span> = <span class="literal">null</span>;
+            }
+
+        }
+
+    }
+    traversal(root);
+};
+</code></pre><h2 id="耗时">耗时</h2><p>  <img src="/images/nextpointer.png" alt="nextpointerruntime"></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/10/10/LeetCode-Move-Zeroes/" itemprop="url">
+                LeetCode Move Zeroes
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-10T20:51:48+08:00" content="2015-10-10">
+            2015-10-10
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/10/10/LeetCode-Move-Zeroes/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/10/LeetCode-Move-Zeroes/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/move-zeroes/" target="_blank" rel="external">Move Zeroes</a></p>
+<p>将一个数组中的0元素都移到最后面，同时保持非0元素的顺序不变。</p>
+<p>比如，[0,1,0,3,12] 移动后变成了[1,3,12,0,0]</p>
+<h2 id="思路">思路</h2><ol>
+<li>找到第一个0元素的位置，从第一个0元素的位置往后遍历</li>
+<li>发现非0元素，则与第一个0元素互换位置，并将第一个0元素的位置往后移一位。</li>
+<li>继续遍历，重复2动作直到遍历结束。</li>
+</ol>
+<h2 id="实现">实现</h2><p>Javascript</p>
+<pre><code><span class="comment">/**
+ * <span class="doctag">@param</span> {number[]} nums
+ * <span class="doctag">@return</span> {void} Do not return anything, modify nums in-place instead.
+ */</span>
+<span class="keyword">var</span> moveZeroes = <span class="function"><span class="keyword">function</span><span class="params">(nums)</span> </span>{
+    <span class="keyword">var</span> firstzero = <span class="number">0</span>,temp;
+    <span class="keyword">for</span>(;firstzero&lt;nums.length-<span class="number">1</span>;firstzero++){
+        <span class="comment">//find first zero</span>
+        <span class="keyword">if</span>(nums[firstzero]===<span class="number">0</span>) <span class="keyword">break</span>;
+    }
+    <span class="keyword">for</span>(<span class="keyword">var</span> j=firstzero+<span class="number">1</span>;j&lt;nums.length;j++){
+        <span class="keyword">if</span>(nums[j]!==<span class="number">0</span>){
+            <span class="comment">//non-zero, change and move on</span>
+            temp = nums[j];
+            nums[j]=nums[firstzero];
+            nums[firstzero]=temp;
+            firstzero ++;
+        }
+
+    }
+
+};
+</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/movezeroes.png" alt="movezeroes"></p>
 </span>
         
       
@@ -894,90 +1054,6 @@
 </ol>
 <h2 id="Monkey命令行参数详解">Monkey命令行参数详解</h2><p>   -p: 所要测试的包。<br>         示例：-p com.android.test<br>   -throttle: 在事件之间插入固定延迟。<br>         示例：—throttle 1000（毫秒）<br>   -s: 伪随机数生成器的seed值。<br>         示例： -s 600（如果用相同的seed值再次运行monkey，它将生成相同的事件序列。）<br>   -v: 用于指定日志的详细程度。<br>         示例： -v -v -v 100（3个-v代表最详细的日志级别）（数字1000： 表示测试事件数）</p>
 <p>   <a href="http://developer.android.com/tools/help/monkey.html" target="_blank" rel="external">其他命令参数</a>      </p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/07/Nexus-7-刷小米开发版系统助力webview调试/" itemprop="url">
-                刷小米开发版系统助力安卓webview调试
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-09-07T12:22:12+08:00" content="2015-09-07">
-            2015-09-07
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/09/07/Nexus-7-刷小米开发版系统助力webview调试/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/07/Nexus-7-刷小米开发版系统助力webview调试/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>偶然发现在小米开发版系统上装的app应用，其webview的debug模式是打开的！！！</p>
-<p>那么也就是说以后不管是qq，淘宝，只要是他们用了webview都可以直接在chrome中远程调试线上代码了的。</p>
-<p>好处不用多说，直接搞起来。</p>
-<h2 id="刷机步骤">刷机步骤</h2><p>以我的nexus 7 为例。</p>
-<ol>
-<li><p>首先需要<a href="http://judastree.github.io/blog/2015/09/07/Nexus-7-%E8%A7%A3%E9%94%81/" target="_blank" rel="external">解锁设备</a> </p>
-</li>
-<li><p>然后准备好小米开发版系统，我在rom基地下的<a href="http://www.romjd.com/Rom/Detail/26195" target="_blank" rel="external">Google Nexus 7(第二代)刷机包 官方MIUI V5 4.8.22 开发版</a></p>
-</li>
-<li><p>PC端下载刷机精灵，之后的操作就很简单了，按着刷机精灵的步骤来。</p>
-</li>
-</ol>
-<h2 id="效果">效果</h2><p>nexus上已经是小米的系统了。</p>
-<p><img src="/images/xiaomisystem.jpg" alt="xiaomisystem"></p>
-<p>在nexus上打开了qq，淘宝和电视淘宝的app， 直接可以在chrome中debug。</p>
-<p><img src="/images/removedebug.png" alt="removedebug"></p>
 </span>
         
       

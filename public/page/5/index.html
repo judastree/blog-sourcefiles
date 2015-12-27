@@ -189,6 +189,159 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/29/LeetCode-Merge-Two-Sorted-Lists/" itemprop="url">
+                LeetCode:Merge Two Sorted Lists
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-29T10:31:25+08:00" content="2015-07-29">
+            2015-07-29
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/29/LeetCode-Merge-Two-Sorted-Lists/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/29/LeetCode-Merge-Two-Sorted-Lists/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p>  <a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank" rel="external">Merge Two Sorted Lists</a></p>
+<p>   有两个排序好的链表l1和l2，要求是合并为一个列表，并保持列表有序。</p>
+<h2 id="思路">思路</h2><p>   我的想法是先遍历两个链表找到较短的一个，然后把短链表上节点逐个插入到长链表中。</p>
+<p>   然后在网上看别人的代码，其实不用先找到短链。拿一个链表做基准，将另外一个插入就来，只遍历一次就好了。</p>
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code><span class="comment">/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */</span>
+<span class="comment">/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */</span>
+var mergeTwoLists = function(l1, l2) {
+    <span class="comment">//定义指针</span>
+    var sPointer = l1,lPointer = l2;
+
+    <span class="comment">//一些特殊情况的处理</span>
+    <span class="keyword">if</span>(sPointer&amp;&amp;sPointer.val&amp;&amp;lPointer&amp;&amp;lPointer.val===<span class="keyword">null</span>){
+        <span class="keyword">return</span> sPointer;
+    }
+    <span class="keyword">if</span>(sPointer&amp;&amp;sPointer.val===<span class="keyword">null</span>&amp;&amp;lPointer&amp;&amp;lPointer.val){
+        <span class="keyword">return</span> lPointer;
+    }
+    <span class="keyword">if</span>(sPointer&amp;&amp;!lPointer){
+        <span class="keyword">return</span> sPointer;
+    }
+    <span class="keyword">if</span>(!sPointer&amp;&amp;lPointer){
+        <span class="keyword">return</span> lPointer;
+    }
+    <span class="keyword">if</span>(!sPointer&amp;&amp;!lPointer){
+        <span class="keyword">return</span> <span class="keyword">null</span>;
+    }
+
+     <span class="comment">//找到较短链表,逐个插入到长链表中</span>
+    <span class="keyword">while</span>(sPointer){
+        <span class="keyword">if</span>(!lPointer){ <span class="comment">//lpointer为null，说明l1&gt;l2</span>
+            sPointer = l2;
+            lPointer = l1;
+            <span class="keyword">break</span>;
+        }
+        sPointer = sPointer.<span class="keyword">next</span>;
+        lPointer = lPointer.<span class="keyword">next</span>;
+    }
+    <span class="keyword">if</span>(!sPointer){
+        <span class="comment">//l1&lt;=l2</span>
+        sPointer = l1;
+        lPointer = l2;
+    }
+
+    <span class="comment">//为了保存插入节点previous的位置，创建一个dummy的节点</span>
+    var dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);
+    dummy.<span class="keyword">next</span> = lPointer;
+
+    var prePointer = dummy;
+
+    var insertnode = sPointer;
+    <span class="keyword">while</span>(sPointer){
+        <span class="keyword">if</span>(insertnode.val&lt;=lPointer.val){
+
+            prePointer.<span class="keyword">next</span> = insertnode;
+            sPointer = sPointer.<span class="keyword">next</span>;
+            insertnode.<span class="keyword">next</span> = lPointer;
+            <span class="comment">//短链的指针后移一位，长链不动</span>
+            insertnode = sPointer;
+            prePointer = prePointer.<span class="keyword">next</span>;
+        }<span class="keyword">else</span>{
+            <span class="keyword">if</span>(!lPointer.<span class="keyword">next</span>){
+                lPointer.<span class="keyword">next</span> = sPointer;
+                <span class="keyword">break</span>;
+            }
+            <span class="comment">//长链后移一位，短链不动</span>
+            prePointer =lPointer;
+            lPointer = lPointer.<span class="keyword">next</span>;
+        }
+
+
+    }
+    <span class="keyword">return</span> dummy.<span class="keyword">next</span>;
+};
+</code></pre><p>  <img src="/images/merge2sortedlists.png" alt="merge2sortedlists"></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/28/requirejs-的运行机制/" itemprop="url">
                 requirejs 的运行机制
               </a>
@@ -955,164 +1108,6 @@ console.<span class="built_in">log</span> <span class="params">(<span class="par
 <p>“让我先砍掉你的一条腿好不好?”</p>
 <p>“为什么你那么执着于砍掉我的腿？”</p>
 <p>“没为什么，我就是想砍掉你的一条腿。”</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/" itemprop="url">
-                LeetCode:Intersection of Two Linked Lists
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-24T10:47:40+08:00" content="2015-07-24">
-            2015-07-24
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/24/LeetCode-Intersection-of-Two-Linked-Lists/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/" target="_blank" rel="external">查找两个链表相同的尾链</a></p>
-<pre><code>A:          <span class="literal">a1</span> → <span class="literal">a2</span>
-                   ↘
-                     <span class="literal">c1</span> → <span class="literal">c2</span> → <span class="literal">c3</span>
-                   ↗            
-<span class="keyword">B: </span>    <span class="keyword">b1 </span>→ <span class="keyword">b2 </span>→ <span class="keyword">b3</span>
-</code></pre><p> <em>如果两个链表没有相同尾链，返回null。
- </em>两个链表在输出时应保持原来的结构。<br> <em>链表结构中没有循环。
- </em>时间复杂度要求O(n),空间复杂度要求O(1)</p>
-<h2 id="思路">思路</h2><p> 先取A，B链的长度，找出哪个是短链，哪个是长链。</p>
-<p> 然后找到长链尾部和短链长度相同的位置，开始比较它和短链是否相等。</p>
-<p> 如果当前节点不相等，则两者后移一位继续比较，直到找到第一个相等的节点，记录之。</p>
-<p> 如果当前节点不相等，但前一个节点相等，说明没有相同的尾链，返回null。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * @param {ListNode} headA
- * @param {ListNode} headB
- * @return {ListNode}
- */</span>
-var <span class="variable">getIntersectionNode =</span> function(headA, headB) {
-
-    <span class="keyword">if</span>(headA&amp;&amp;headB){
-        var <span class="variable">node=</span>headA,<span class="variable">aLength=</span><span class="number">1</span>,<span class="variable">bLength=</span><span class="number">1</span>;
-        while(node.next){
-            aLength++;
-            <span class="variable">node =</span> node.next;
-        }
-        <span class="variable">node=</span> headB;
-        while(node.next){
-            bLength++;
-            <span class="variable">node=</span>node.next;
-        }
-        var pointer1 ,pointer2;
-        //将ab链截取到尾部位数相同
-        <span class="keyword">if</span>(aLength &gt; bLength){
-            <span class="variable">pointer1 =</span> headB;
-            <span class="variable">pointer2 =</span> headA;
-            for(var <span class="variable">i =</span> bLength;i&lt;aLength;i++){
-                <span class="variable">pointer2 =</span> pointer2.next;
-            }
-        }<span class="keyword">else</span> <span class="keyword">if</span>(aLength&lt;bLength){
-            <span class="variable">pointer1 =</span> headA;
-            <span class="variable">pointer2 =</span> headB;
-            for(<span class="variable">i =</span> aLength;i&lt;bLength;i++){
-                <span class="variable">pointer2 =</span> pointer2.next;
-            }
-        }<span class="keyword">else</span>{
-            <span class="variable">pointer1 =</span> headA;
-            <span class="variable">pointer2 =</span> headB;
-        }
-
-        <span class="variable">node =</span> <span class="constant">null</span>;
-        //保留上次比较结果
-        var <span class="variable">sameFlag =</span> <span class="constant">false</span>;
-        while(pointer1){
-
-            <span class="keyword">if</span>(pointer1.<span class="variable">val=</span>==pointer2.val){
-                //当前相等，继续比较。
-                // 如果上次比较不相等，则赋值node，说明是第一个相等的节点
-                <span class="keyword">if</span>(!sameFlag){
-                    <span class="variable">node =</span> pointer1;
-                }
-                <span class="variable">sameFlag=</span><span class="constant">true</span>;
-                <span class="variable">pointer1 =</span> pointer1.next;
-                <span class="variable">pointer2 =</span> pointer2.next;
-                continue;
-
-            }
-            <span class="keyword">if</span>(pointer1.val!==pointer2.val){
-                //当前不相等，判断上次比较是否相等。
-                <span class="keyword">if</span>(sameFlag){
-                    //上次比较相等，则直接返回<span class="constant">null</span>，说明没有相同的尾链
-                    return <span class="constant">null</span>;
-                }<span class="keyword">else</span>{
-                    //上次比较不相等，则继续比较
-                    <span class="variable">pointer1 =</span> pointer1.next;
-                    <span class="variable">pointer2 =</span> pointer2.next;
-                    <span class="variable">sameFlag=</span><span class="constant">false</span>;
-                    continue;
-                }
-
-            }
-        }
-        return node;
-
-    }<span class="keyword">else</span>{
-        return <span class="constant">null</span>;
-    }
-};
-</code></pre><p> <img src="/images/intersection.png" alt="intersection"></p>
 </span>
         
       
