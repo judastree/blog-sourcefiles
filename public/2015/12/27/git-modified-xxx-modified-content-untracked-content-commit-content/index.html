@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,Judastree" />
+  <meta name="keywords" content="git," />
 
 
 
@@ -39,31 +39,24 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="title: “Debug Grunt in Webstorm “date: 2015-07-30 15:04:12
-tags: [工具]Steps  1 Run  -&amp;gt;  Edit Configuration
-  2 Press Add button (+)
-  3 Type the configurations
-  
-  4 Set breakpoint where you want">
+<meta name="description" content="git add 或者commit,push的时候发现某个文件夹不能被add,commit,提示当前文件夹 modified:xxx(modified content)
+去git远程仓库查看,这个目录是空的.
+打开本地仓库的目录,发现xxx目录下有个.git的目录,影响了其父目录的trace.
+解决办法:删除.git目录,重新提交">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Judastree">
-<meta property="og:url" content="http://judastree.github.io/2015/12/27/Debug-Grunt-in-Webstorm/index.html">
+<meta property="og:title" content="git modified:xxx(modified content,untracked content,commit content)">
+<meta property="og:url" content="http://judastree.github.io/2015/12/27/git-modified-xxx-modified-content-untracked-content-commit-content/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="title: “Debug Grunt in Webstorm “date: 2015-07-30 15:04:12
-tags: [工具]Steps  1 Run  -&amp;gt;  Edit Configuration
-  2 Press Add button (+)
-  3 Type the configurations
-  
-  4 Set breakpoint where you want">
-<meta property="og:image" content="/images/gruntdebuginwebstorm.png">
+<meta property="og:description" content="git add 或者commit,push的时候发现某个文件夹不能被add,commit,提示当前文件夹 modified:xxx(modified content)
+去git远程仓库查看,这个目录是空的.
+打开本地仓库的目录,发现xxx目录下有个.git的目录,影响了其父目录的trace.
+解决办法:删除.git目录,重新提交">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Judastree">
-<meta name="twitter:description" content="title: “Debug Grunt in Webstorm “date: 2015-07-30 15:04:12
-tags: [工具]Steps  1 Run  -&amp;gt;  Edit Configuration
-  2 Press Add button (+)
-  3 Type the configurations
-  
-  4 Set breakpoint where you want">
+<meta name="twitter:title" content="git modified:xxx(modified content,untracked content,commit content)">
+<meta name="twitter:description" content="git add 或者commit,push的时候发现某个文件夹不能被add,commit,提示当前文件夹 modified:xxx(modified content)
+去git远程仓库查看,这个目录是空的.
+打开本地仓库的目录,发现xxx目录下有个.git的目录,影响了其父目录的trace.
+解决办法:删除.git目录,重新提交">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -73,7 +66,7 @@ tags: [工具]Steps  1 Run  -&amp;gt;  Edit Configuration
   };
 </script>
 
-    <title>  // Judastree </title>
+    <title> git modified:xxx(modified content,untracked content,commit content) // Judastree </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -203,7 +196,7 @@ tags: [工具]Steps  1 Run  -&amp;gt;  Edit Configuration
           
           
             
-              
+              git modified:xxx(modified content,untracked content,commit content)
             
           
         </h1>
@@ -212,7 +205,7 @@ tags: [工具]Steps  1 Run  -&amp;gt;  Edit Configuration
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-12-27T16:51:09+08:00" content="2015-12-27">
+          <time itemprop="dateCreated" datetime="2015-12-27T21:58:00+08:00" content="2015-12-27">
             2015-12-27
           </time>
         </span>
@@ -223,8 +216,8 @@ tags: [工具]Steps  1 Run  -&amp;gt;  Edit Configuration
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/12/27/Debug-Grunt-in-Webstorm/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/27/Debug-Grunt-in-Webstorm/" itemprop="commentsCount"></span>
+              <a href="/2015/12/27/git-modified-xxx-modified-content-untracked-content-commit-content/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/27/git-modified-xxx-modified-content-untracked-content-commit-content/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -238,18 +231,21 @@ tags: [工具]Steps  1 Run  -&amp;gt;  Edit Configuration
       
 
       
-        <span itemprop="articleBody"><p>title: “Debug Grunt in Webstorm “<br>date: 2015-07-30 15:04:12</p>
-<h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run  -&gt;  Edit Configuration</p>
-<p>  2 Press Add button (+)</p>
-<p>  3 Type the configurations</p>
-<p>  <img src="/images/gruntdebuginwebstorm.png" alt="gruntdebuginwebstorm"></p>
-<p>  4 Set breakpoint where you want </p>
-<p>  5 Press Shift+Ctrl+D to debug</p>
+        <span itemprop="articleBody"><p>git add 或者commit,push的时候发现某个文件夹不能被add,commit,提示当前文件夹 modified:xxx(modified content)</p>
+<p>去git远程仓库查看,这个目录是空的.</p>
+<p>打开本地仓库的目录,发现xxx目录下有个.git的目录,影响了其父目录的trace.</p>
+<p>解决办法:删除.git目录,重新提交</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag">#git</a>
+          
+        </div>
       
 
       
@@ -260,7 +256,7 @@ tags: [工具]Steps  1 Run  -&amp;gt;  Edit Configuration
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/27/hello-world/" rel="next">Hello World !</a>
+              <a href="/2015/12/27/Mitmproxy-抓包工具/" rel="next">Mitmproxy 抓包工具</a>
             
           </div>
         </div>
@@ -286,8 +282,8 @@ tags: [工具]Steps  1 Run  -&amp;gt;  Edit Configuration
             
               <div class="comments" id="comments">
                 
-                  <div class="ds-thread" data-thread-key="2015/12/27/Debug-Grunt-in-Webstorm/"
-                       data-title="" data-url="http://judastree.github.io/2015/12/27/Debug-Grunt-in-Webstorm/">
+                  <div class="ds-thread" data-thread-key="2015/12/27/git-modified-xxx-modified-content-untracked-content-commit-content/"
+                       data-title="git modified:xxx(modified content,untracked content,commit content)" data-url="http://judastree.github.io/2015/12/27/git-modified-xxx-modified-content-untracked-content-commit-content/">
                   </div>
                 
               </div>
@@ -394,7 +390,7 @@ tags: [工具]Steps  1 Run  -&amp;gt;  Edit Configuration
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags:_[工具]"><span class="nav-number">1.</span> <span class="nav-text">tags: [工具]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Steps"><span class="nav-number">2.</span> <span class="nav-text">Steps</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -637,6 +633,10 @@ tags: [工具]Steps  1 Run  -&amp;gt;  Edit Configuration
 
 
 
+
+
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 

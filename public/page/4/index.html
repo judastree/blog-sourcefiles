@@ -189,115 +189,6 @@
           
           
             
-              <a class="post-title-link" href="/2015/08/07/LeetCode-Remove-Nth-from-end/" itemprop="url">
-                LeetCode:Remove Nth Node from End of List
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-07T09:07:42+08:00" content="2015-08-07">
-            2015-08-07
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/08/07/LeetCode-Remove-Nth-from-end/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/07/LeetCode-Remove-Nth-from-end/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth Node from End of List</a></p>
-<p>把倒数第N个元素从链表中删除。</p>
-<p>比如链表1-&gt;2-&gt;3-&gt;4-&gt;5,  把倒数第二个删除（n=2），返回1-&gt;2-&gt;3-&gt;5</p>
-<h2 id="思路">思路</h2><p>首先是遍历整个链表，拿到链表的长度，然后根据这个长度值length和指定的n值再遍历一次链表，找到要删除节点的父节点。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * Definition for singly-linked list.
- */</span>
-  function ListNode(val) {
-      <span class="keyword">this</span>.val = val;
-      <span class="keyword">this</span>.<span class="keyword">next</span> = <span class="keyword">null</span>;
-  }
-
-<span class="comment">/**
- * @param {ListNode} head
- * @param {number} n
- * @return {ListNode}
- */</span>
-var removeNthFromEnd = function(head, n) {
-    var dumy = <span class="keyword">new</span> ListNode(<span class="number">0</span>), p=head,length=<span class="number">0</span>;
-    dumy.<span class="keyword">next</span> =head;
-    <span class="comment">//获取链表长度</span>
-    <span class="keyword">while</span>(p){
-        length++;
-        p = p.<span class="keyword">next</span>;
-    }
-    p = dumy;
-    <span class="comment">//找到要删除元素的父元素</span>
-    <span class="keyword">while</span>(length&gt;n){
-        p = p.<span class="keyword">next</span>;
-        length--;
-    }
-    <span class="comment">//删除元素</span>
-    <span class="keyword">if</span>(p.<span class="keyword">next</span>){
-        p.<span class="keyword">next</span> = p.<span class="keyword">next</span>.<span class="keyword">next</span>;
-    }<span class="keyword">else</span>{
-        p = <span class="keyword">null</span>;
-    }
-    <span class="keyword">return</span> dumy.<span class="keyword">next</span>;
-};
-</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/removenthfromend.png" alt="removenthfromend"></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
               <a class="post-title-link" href="/2015/08/07/LeetCode-Merge-Sorted-Array/" itemprop="url">
                 LeetCode: Merge Sorted Array
               </a>
@@ -911,6 +802,80 @@ var reverseList = <span class="function"><span class="keyword">function</span>(<
 <p>然后把自己陷入到烦恼自责的生活中，但其实这样不好。</p>
 <p>不要给自己上发条，要找到乐趣，并享受之。</p>
 <p>就像玉伯在签名一样，因上努力，果上随缘，这样不是更好么？</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/07/30/Debug-Grunt-in-Webstorm/" itemprop="url">
+                Debug Grunt In Webstorm
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-30T16:24:49+08:00" content="2015-07-30">
+            2015-07-30
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/07/30/Debug-Grunt-in-Webstorm/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/30/Debug-Grunt-in-Webstorm/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="Steps">Steps</h2><p>  1 Run  -&gt;  Edit Configuration</p>
+<p>  2 Press Add button (+)</p>
+<p>  3 Type the configurations</p>
+<p>  <img src="/images/gruntdebuginwebstorm.png" alt="gruntdebuginwebstorm"></p>
+<p>  4 Set breakpoint where you want </p>
+<p>  5 Press Shift+Ctrl+D to debug</p>
 </span>
         
       

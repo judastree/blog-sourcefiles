@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,Judastree" />
+  <meta name="keywords" content="webstorm," />
 
 
 
@@ -39,18 +39,31 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="Steps  1 Run  -&amp;gt;  Edit Configuration
+  2 Press Add button (+)
+  3 Type the configurations
+  
+  4 Set breakpoint where you want 
+  5 Press Shift+Ctrl+D to debug">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World !">
-<meta property="og:url" content="http://judastree.github.io/2015/12/27/hello-world/index.html">
+<meta property="og:title" content="Debug Grunt In Webstorm">
+<meta property="og:url" content="http://judastree.github.io/2015/07/30/Debug-Grunt-in-Webstorm/index.html">
 <meta property="og:site_name" content="Judastree">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta property="og:description" content="Steps  1 Run  -&amp;gt;  Edit Configuration
+  2 Press Add button (+)
+  3 Type the configurations
+  
+  4 Set breakpoint where you want 
+  5 Press Shift+Ctrl+D to debug">
+<meta property="og:image" content="/images/gruntdebuginwebstorm.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World !">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="Debug Grunt In Webstorm">
+<meta name="twitter:description" content="Steps  1 Run  -&amp;gt;  Edit Configuration
+  2 Press Add button (+)
+  3 Type the configurations
+  
+  4 Set breakpoint where you want 
+  5 Press Shift+Ctrl+D to debug">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -60,7 +73,7 @@ Quick">
   };
 </script>
 
-    <title> Hello World ! // Judastree </title>
+    <title> Debug Grunt In Webstorm // Judastree </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -190,7 +203,7 @@ Quick">
           
           
             
-              Hello World !
+              Debug Grunt In Webstorm
             
           
         </h1>
@@ -199,8 +212,8 @@ Quick">
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-12-27T16:51:09+08:00" content="2015-12-27">
-            2015-12-27
+          <time itemprop="dateCreated" datetime="2015-07-30T16:24:49+08:00" content="2015-07-30">
+            2015-07-30
           </time>
         </span>
 
@@ -210,8 +223,8 @@ Quick">
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/12/27/hello-world/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/27/hello-world/" itemprop="commentsCount"></span>
+              <a href="/2015/07/30/Debug-Grunt-in-Webstorm/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/30/Debug-Grunt-in-Webstorm/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -225,33 +238,36 @@ Quick">
       
 
       
-        <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <span itemprop="articleBody"><h2 id="Steps">Steps</h2><p>  1 Run  -&gt;  Edit Configuration</p>
+<p>  2 Press Add button (+)</p>
+<p>  3 Type the configurations</p>
+<p>  <img src="/images/gruntdebuginwebstorm.png" alt="gruntdebuginwebstorm"></p>
+<p>  4 Set breakpoint where you want </p>
+<p>  5 Press Shift+Ctrl+D to debug</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/webstorm/" rel="tag">#webstorm</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/27/Debug-Grunt-in-Webstorm/" rel="prev"></a>
+              <a href="/2015/08/01/如何利用好碎片化的事件/" rel="prev">如何有效利用碎片化的时间</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/27/Mitmproxy-抓包工具/" rel="next">Mitmproxy 抓包工具</a>
+              <a href="/2015/07/30/setWebChromeClient-setWebClient的区别/" rel="next">setWebChromeClient setWebviewClient的区别</a>
             
           </div>
         </div>
@@ -277,8 +293,8 @@ Quick">
             
               <div class="comments" id="comments">
                 
-                  <div class="ds-thread" data-thread-key="2015/12/27/hello-world/"
-                       data-title="Hello World !" data-url="http://judastree.github.io/2015/12/27/hello-world/">
+                  <div class="ds-thread" data-thread-key="2015/07/30/Debug-Grunt-in-Webstorm/"
+                       data-title="Debug Grunt In Webstorm" data-url="http://judastree.github.io/2015/07/30/Debug-Grunt-in-Webstorm/">
                   </div>
                 
               </div>
@@ -385,7 +401,7 @@ Quick">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create_a_new_post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate_static_files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy_to_remote_sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Steps"><span class="nav-number">1.</span> <span class="nav-text">Steps</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

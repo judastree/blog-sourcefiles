@@ -189,8 +189,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/12/27/Debug-Grunt-in-Webstorm/" itemprop="url">
-                未命名
+              <a class="post-title-link" href="/2015/12/27/git-modified-xxx-modified-content-untracked-content-commit-content/" itemprop="url">
+                git modified:xxx(modified content,untracked content,commit content)
               </a>
             
           
@@ -200,7 +200,7 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-12-27T16:51:09+08:00" content="2015-12-27">
+          <time itemprop="dateCreated" datetime="2015-12-27T21:58:00+08:00" content="2015-12-27">
             2015-12-27
           </time>
         </span>
@@ -211,8 +211,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/12/27/Debug-Grunt-in-Webstorm/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/27/Debug-Grunt-in-Webstorm/" itemprop="commentsCount"></span>
+              <a href="/2015/12/27/git-modified-xxx-modified-content-untracked-content-commit-content/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/27/git-modified-xxx-modified-content-untracked-content-commit-content/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -227,90 +227,10 @@
 
       
         
-          <span itemprop="articleBody"><p>title: “Debug Grunt in Webstorm “<br>date: 2015-07-30 15:04:12</p>
-<h2 id="tags:_[工具]">tags: [工具]</h2><h2 id="Steps">Steps</h2><p>  1 Run  -&gt;  Edit Configuration</p>
-<p>  2 Press Add button (+)</p>
-<p>  3 Type the configurations</p>
-<p>  <img src="/images/gruntdebuginwebstorm.png" alt="gruntdebuginwebstorm"></p>
-<p>  4 Set breakpoint where you want </p>
-<p>  5 Press Shift+Ctrl+D to debug</p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/12/27/hello-world/" itemprop="url">
-                Hello World !
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-12-27T16:51:09+08:00" content="2015-12-27">
-            2015-12-27
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/12/27/hello-world/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/27/hello-world/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+          <span itemprop="articleBody"><p>git add 或者commit,push的时候发现某个文件夹不能被add,commit,提示当前文件夹 modified:xxx(modified content)</p>
+<p>去git远程仓库查看,这个目录是空的.</p>
+<p>打开本地仓库的目录,发现xxx目录下有个.git的目录,影响了其父目录的trace.</p>
+<p>解决办法:删除.git目录,重新提交</p>
 </span>
         
       
@@ -916,6 +836,141 @@
 </code></pre><p>将你的keystore(比如叫yourdebug.keystore)文件拷到.android目录，然后执行命令：</p>
 <pre><code>keytool -<span class="type">list</span> -v -keystore yourdebug.keystore
 </code></pre></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/10/12/LeetCode-Populating-Next-Right-Pointers-in-Each-Node/" itemprop="url">
+                LeetCode Populating Next Right Pointers in Each Node
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-10-12T15:22:17+08:00" content="2015-10-12">
+            2015-10-12
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/10/12/LeetCode-Populating-Next-Right-Pointers-in-Each-Node/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/12/LeetCode-Populating-Next-Right-Pointers-in-Each-Node/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/populating-next-right-pointers-in-each-node/" target="_blank" rel="external">Populating Next Right Pointers in Each Node</a></p>
+<p>给一个平衡二叉树的每个节点加上next属性,next 指向起相邻的节点，如果没有则指向null;</p>
+<p>Given the following perfect binary tree,</p>
+<pre><code>     <span class="number">1</span>
+   /  <span class="string">\</span>
+  <span class="number">2</span>    <span class="number">3</span>
+ / <span class="string">\</span>  / <span class="string">\</span>
+<span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>
+</code></pre><p>After calling your function, the tree should look like:</p>
+<pre><code>     <span class="number">1</span> <span class="subst">-&gt; </span><span class="built_in">NULL</span>
+   <span class="subst">/</span>  <span class="subst">\</span>
+  <span class="number">2</span> <span class="subst">-&gt; </span><span class="number">3</span> <span class="subst">-&gt; </span><span class="built_in">NULL</span>
+ <span class="subst">/</span> <span class="subst">\</span>  <span class="subst">/</span> <span class="subst">\</span>
+<span class="number">4</span><span class="subst">-&gt;</span><span class="number">5</span><span class="subst">-&gt;</span><span class="number">6</span><span class="subst">-&gt;</span><span class="number">7</span> <span class="subst">-&gt; </span><span class="built_in">NULL</span>
+</code></pre><h2 id="思路">思路</h2><p>   1.对于一个父节点来说，它左孩子的next指向它的右孩子，它的右孩子的next指向它自己next节点的左孩子。<br>   2.遍历整个二叉树，对每个父节点进行1操作。</p>
+<h2 id="实现">实现</h2><p>JavaScript:</p>
+<pre><code>/**
+ * Definition <span class="keyword">for</span> binary tree <span class="keyword">with</span> <span class="keyword">next</span> pointer.
+ * <span class="keyword">function</span> TreeLinkNode(val) {
+ *     this.val = val;
+ *     this.<span class="built_in">left</span> = this.<span class="built_in">right</span> = this.<span class="keyword">next</span> = <span class="literal">null</span>;
+ * }
+ */
+
+/**
+ * @param {TreeLinkNode} root
+ * @return {void} <span class="keyword">Do</span> <span class="keyword">not</span> return anything, modify tree <span class="keyword">in</span>-place instead.
+ */
+var connect = <span class="keyword">function</span>(root) {
+    <span class="keyword">if</span>(root===<span class="literal">null</span>) return;
+    root.<span class="keyword">next</span> =<span class="literal">null</span>;
+
+
+    <span class="keyword">function</span> traversal(node){
+        <span class="keyword">if</span>(node){
+            <span class="keyword">if</span>(node.<span class="built_in">left</span>){
+                connectLeftChild(node,node.<span class="built_in">left</span>);
+                traversal(node.<span class="built_in">left</span>);
+            }
+            <span class="keyword">if</span>(node.<span class="built_in">right</span>){
+                connectRightChild(node,node.<span class="built_in">right</span>);
+                traversal(node.<span class="built_in">right</span>);
+            }
+        }
+
+
+    }
+    <span class="keyword">function</span> connectLeftChild(parent,node){
+
+        <span class="keyword">if</span>(node){
+             node.<span class="keyword">next</span> = parent.<span class="built_in">right</span>;
+        }
+    } 
+    <span class="keyword">function</span> connectRightChild(parent,node){
+        <span class="keyword">if</span>(node){
+            <span class="keyword">if</span>(parent.<span class="keyword">next</span>){
+                node.<span class="keyword">next</span> = parent.<span class="keyword">next</span>.<span class="built_in">left</span>;
+            }<span class="keyword">else</span>{
+                node.<span class="keyword">next</span> = <span class="literal">null</span>;
+            }
+
+        }
+
+    }
+    traversal(root);
+};
+</code></pre><h2 id="耗时">耗时</h2><p>  <img src="/images/nextpointer.png" alt="nextpointerruntime"></p>
+</span>
         
       
     </div>
