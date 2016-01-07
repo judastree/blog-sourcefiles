@@ -5,7 +5,7 @@
   <subtitle><![CDATA[You are the pretty sunshine of my life]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://judastree.github.io//"/>
-  <updated>2015-12-27T14:01:28.000Z</updated>
+  <updated>2016-01-07T06:59:27.000Z</updated>
   <id>http://judastree.github.io//</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[切图时jpg png-8 png-24 gif图片选择]]></title>
+    <link href="http://judastree.github.io/2016/01/07/jpg-png-gif-%E5%88%87%E5%9B%BE%E6%97%B6%E5%9B%BE%E7%89%87%E5%B0%8F%E9%80%89%E6%8B%A9/"/>
+    <id>http://judastree.github.io/2016/01/07/jpg-png-gif-切图时图片小选择/</id>
+    <published>2016-01-07T06:35:19.000Z</published>
+    <updated>2016-01-07T06:59:27.000Z</updated>
+    <content type="html"><![CDATA[<p>PS/AI切图的时候存储图片格式可以选择gif,jpg,png-8,png-24这几种格式.</p>
+<p>这里有介绍<a href="http://www.mahaixiang.cn/Photoshop/400.html" target="_blank" rel="external">JPG/PNG/GIF图片原理</a></p>
+<p>jpg更适合照片,容易失真,不支持透明,所以色彩丰富的大的图片用jpg.</p>
+<p>png-8无损格式,支持纯透明,不支持Alpha半透明,尺寸小的,色彩不多的可以用png-8</p>
+<p>png-24和png-8类似,但存储方式不一样,png-24支持半透明.</p>
+<p>gif是压缩比高,适合小图片和动图,支持透明.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>PS/AI切图的时候存储图片格式可以选择gif,jpg,png-8,png-24这几种格式.</p>
+<p>这里有介绍<a href="http://www.mahaixiang.cn/Photoshop/400.html" target="_blank" rel="ext]]>
+    </summary>
+    
+      <category term="切图" scheme="http://judastree.github.io/tags/%E5%88%87%E5%9B%BE/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[git modified:xxx(modified content,untracked content,commit content)]]></title>
@@ -656,42 +678,6 @@ var connect = <span class="keyword">function</span>(root) {
       <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
     
       <category term="Monkey" scheme="http://judastree.github.io/tags/Monkey/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[刷小米开发版系统助力安卓webview调试]]></title>
-    <link href="http://judastree.github.io/2015/09/07/Nexus-7-%E5%88%B7%E5%B0%8F%E7%B1%B3%E5%BC%80%E5%8F%91%E7%89%88%E7%B3%BB%E7%BB%9F%E5%8A%A9%E5%8A%9Bwebview%E8%B0%83%E8%AF%95/"/>
-    <id>http://judastree.github.io/2015/09/07/Nexus-7-刷小米开发版系统助力webview调试/</id>
-    <published>2015-09-07T04:22:12.000Z</published>
-    <updated>2015-12-27T13:24:35.000Z</updated>
-    <content type="html"><![CDATA[<p>偶然发现在小米开发版系统上装的app应用，其webview的debug模式是打开的！！！</p>
-<p>那么也就是说以后不管是qq，淘宝，只要是他们用了webview都可以直接在chrome中远程调试线上代码了的。</p>
-<p>好处不用多说，直接搞起来。</p>
-<h2 id="刷机步骤">刷机步骤</h2><p>以我的nexus 7 为例。</p>
-<ol>
-<li><p>首先需要<a href="http://judastree.github.io/blog/2015/09/07/Nexus-7-%E8%A7%A3%E9%94%81/" target="_blank" rel="external">解锁设备</a> </p>
-</li>
-<li><p>然后准备好小米开发版系统，我在rom基地下的<a href="http://www.romjd.com/Rom/Detail/26195" target="_blank" rel="external">Google Nexus 7(第二代)刷机包 官方MIUI V5 4.8.22 开发版</a></p>
-</li>
-<li><p>PC端下载刷机精灵，之后的操作就很简单了，按着刷机精灵的步骤来。</p>
-</li>
-</ol>
-<h2 id="效果">效果</h2><p>nexus上已经是小米的系统了。</p>
-<p><img src="/images/xiaomisystem.jpg" alt="xiaomisystem"></p>
-<p>在nexus上打开了qq，淘宝和电视淘宝的app， 直接可以在chrome中debug。</p>
-<p><img src="/images/removedebug.png" alt="removedebug"></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>偶然发现在小米开发版系统上装的app应用，其webview的debug模式是打开的！！！</p>
-<p>那么也就是说以后不管是qq，淘宝，只要是他们用了webview都可以直接在chrome中远程调试线上代码了的。</p>
-<p>好处不用多说，直接搞起来。</p>
-<h2 ]]>
-    </summary>
-    
-      <category term="Android" scheme="http://judastree.github.io/tags/Android/"/>
-    
-      <category term="工具" scheme="http://judastree.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   

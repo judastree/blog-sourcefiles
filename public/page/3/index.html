@@ -189,6 +189,90 @@
           
           
             
+              <a class="post-title-link" href="/2015/09/07/Nexus-7-刷小米开发版系统助力webview调试/" itemprop="url">
+                刷小米开发版系统助力安卓webview调试
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-09-07T12:22:12+08:00" content="2015-09-07">
+            2015-09-07
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/09/07/Nexus-7-刷小米开发版系统助力webview调试/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/07/Nexus-7-刷小米开发版系统助力webview调试/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>偶然发现在小米开发版系统上装的app应用，其webview的debug模式是打开的！！！</p>
+<p>那么也就是说以后不管是qq，淘宝，只要是他们用了webview都可以直接在chrome中远程调试线上代码了的。</p>
+<p>好处不用多说，直接搞起来。</p>
+<h2 id="刷机步骤">刷机步骤</h2><p>以我的nexus 7 为例。</p>
+<ol>
+<li><p>首先需要<a href="http://judastree.github.io/blog/2015/09/07/Nexus-7-%E8%A7%A3%E9%94%81/" target="_blank" rel="external">解锁设备</a> </p>
+</li>
+<li><p>然后准备好小米开发版系统，我在rom基地下的<a href="http://www.romjd.com/Rom/Detail/26195" target="_blank" rel="external">Google Nexus 7(第二代)刷机包 官方MIUI V5 4.8.22 开发版</a></p>
+</li>
+<li><p>PC端下载刷机精灵，之后的操作就很简单了，按着刷机精灵的步骤来。</p>
+</li>
+</ol>
+<h2 id="效果">效果</h2><p>nexus上已经是小米的系统了。</p>
+<p><img src="/images/xiaomisystem.jpg" alt="xiaomisystem"></p>
+<p>在nexus上打开了qq，淘宝和电视淘宝的app， 直接可以在chrome中debug。</p>
+<p><img src="/images/removedebug.png" alt="removedebug"></p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/09/07/Nexus-7-解锁/" itemprop="url">
                 Nexus 7 解锁
               </a>
@@ -911,115 +995,6 @@
 
 
     
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/08/07/LeetCode-Remove-Nth-from-end/" itemprop="url">
-                LeetCode:Remove Nth Node from End of List
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-08-07T09:07:42+08:00" content="2015-08-07">
-            2015-08-07
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/2015/08/07/LeetCode-Remove-Nth-from-end/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/07/LeetCode-Remove-Nth-from-end/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h2 id="题目">题目</h2><p><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/" target="_blank" rel="external">Remove Nth Node from End of List</a></p>
-<p>把倒数第N个元素从链表中删除。</p>
-<p>比如链表1-&gt;2-&gt;3-&gt;4-&gt;5,  把倒数第二个删除（n=2），返回1-&gt;2-&gt;3-&gt;5</p>
-<h2 id="思路">思路</h2><p>首先是遍历整个链表，拿到链表的长度，然后根据这个长度值length和指定的n值再遍历一次链表，找到要删除节点的父节点。</p>
-<h2 id="实现">实现</h2><p>JavaScript:</p>
-<pre><code><span class="comment">/**
- * Definition for singly-linked list.
- */</span>
-  function ListNode(val) {
-      <span class="keyword">this</span>.val = val;
-      <span class="keyword">this</span>.<span class="keyword">next</span> = <span class="keyword">null</span>;
-  }
-
-<span class="comment">/**
- * @param {ListNode} head
- * @param {number} n
- * @return {ListNode}
- */</span>
-var removeNthFromEnd = function(head, n) {
-    var dumy = <span class="keyword">new</span> ListNode(<span class="number">0</span>), p=head,length=<span class="number">0</span>;
-    dumy.<span class="keyword">next</span> =head;
-    <span class="comment">//获取链表长度</span>
-    <span class="keyword">while</span>(p){
-        length++;
-        p = p.<span class="keyword">next</span>;
-    }
-    p = dumy;
-    <span class="comment">//找到要删除元素的父元素</span>
-    <span class="keyword">while</span>(length&gt;n){
-        p = p.<span class="keyword">next</span>;
-        length--;
-    }
-    <span class="comment">//删除元素</span>
-    <span class="keyword">if</span>(p.<span class="keyword">next</span>){
-        p.<span class="keyword">next</span> = p.<span class="keyword">next</span>.<span class="keyword">next</span>;
-    }<span class="keyword">else</span>{
-        p = <span class="keyword">null</span>;
-    }
-    <span class="keyword">return</span> dumy.<span class="keyword">next</span>;
-};
-</code></pre><h2 id="耗时">耗时</h2><p><img src="/images/removenthfromend.png" alt="removenthfromend"></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1059,7 +1034,7 @@ var removeNthFromEnd = function(head, n) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">88</span>
+              <span class="site-state-item-count">89</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1073,7 +1048,7 @@ var removeNthFromEnd = function(head, n) {
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -1133,7 +1108,7 @@ var removeNthFromEnd = function(head, n) {
             <div class="copyright" >
   
   &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-heart"></i>
   </span>
